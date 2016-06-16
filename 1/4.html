@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Model</title>
+</head>
+<body>
+	<script src="../jquery-1.10.2.js"></script>
+	<script src="../underscore.js"></script>
+	<script src="../backbone.js"></script>
+	<script>
+	(function ($) {
+		//对象中的方法
+	    var Man = Backbone.Model.extend({
+	    	initialize : function(){
+	    		console.log('初始化');
+	    		//初始化时绑定监听
+	    		this.bind("change:name",function(){
+	    			var name = this.get('name');
+	    			console.log('name改变为'+name);
+	    		})
+	    	},
+	    	defaults:{
+	    		name : "张三",
+	    		age : 24
+	    	},
+	    	aboutMe:function(){
+	    		return "我叫"+this.get('name')+",今年"+this.get('age');
+	    	}
+	    })
+	    var man = new Man();
+	    man.set('name','lee');
+	})(jQuery);
+	</script>
+</body>
+</html>

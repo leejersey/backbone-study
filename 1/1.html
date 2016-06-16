@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Model</title>
+</head>
+<body>
+	<script src="../jquery-1.10.2.js"></script>
+	<script src="../underscore.js"></script>
+	<script src="../backbone.js"></script>
+	<script>
+	(function ($) {
+	    var Man = Backbone.Model.extend({
+	    	initialize : function(){
+	    		console.log('初始化')
+	    	}
+	    })
+	    var man = new Man();
+	})(jQuery);
+	</script>
+</body>
+</html>

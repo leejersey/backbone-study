@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Model</title>
+</head>
+<body>
+	<script src="../jquery-1.10.2.js"></script>
+	<script src="../underscore.js"></script>
+	<script src="../backbone.js"></script>
+	<script>
+	(function ($) {
+		//对象中的方法
+	    var Man = Backbone.Model.extend({
+	    	initialize : function(){
+	    		console.log('初始化')
+	    	},
+	    	defaults:{
+	    		name : "张三",
+	    		age : 24
+	    	},
+	    	aboutMe:function(){
+	    		return "我叫"+this.get('name')+",今年"+this.get('age');
+	    	}
+	    })
+	    var man = new Man();
+	    man.set({'sex':'男'});
+	    console.log(man.aboutMe());
+	})(jQuery);
+	</script>
+</body>
+</html>
