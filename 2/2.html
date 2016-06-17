@@ -40,6 +40,19 @@
 	    	console.log(book.get('title'));
 	    })
 
+	    //使用fetch从服务器端获取数据
+	    //[{'title':'book0'},{'title':'book1'}.....]
+		bookShelf.url = '/books/';
+		bookShelf.fetch({
+		    success:function(collection, response, options){
+		        collection.each(function(book){
+		            alert(book.get('title'));
+		        });
+		    },error:function(collection, response, options){
+		        alert('error');
+		    }
+		});
+
 	})(jQuery);
 	</script>
 </body>
