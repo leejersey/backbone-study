@@ -26,6 +26,8 @@
 			this.$el.text(this.model.get('name'));
 
 			//将新的列表追加到父视图的列表中
+			//console.log(this.parentView);
+			console.log(this);
 			this.parentView.$el.append(this.$el);
 
 			return this;
@@ -37,6 +39,7 @@
 		el : '#band-wraper',
 
 		initialize : function(){
+			//console.log(this);
 			//跟踪渲染函数分享"this"上下文
 			_.bindAll(this,'render');
 
@@ -78,4 +81,5 @@
 	var bandView = new Band.Members.View({
 		collection : band
 	});
+
 //})(jQuery)
