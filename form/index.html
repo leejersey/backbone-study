@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="signup-form-wrapper"></div>
+	<script type="text/template" id="form-template">
+		<form action="index_submit" method="get" accept-charset="utf-8">
+			<p>
+			<label>name:</label>
+			<input type="text" name="name" id="name" value="<%= name %>">
+			</p>
+			<p>
+			<label>email:</label>
+			<input type="email" name="email" id="email" value="<%= email %>">
+			</p>
+			<p>
+			<label>username:</label>
+			<input type="text" name="username" id="username" value="<%= username %>">
+			</p>
+			<p>
+			<label>password:</label>
+			<input type="password" name="password" id="password" value="<%= password %>">
+			</p>
+			<input type="submit">
+		</form>
+	</script>
+	<script src="../jquery-1.10.2.js"></script>
+    <script src="../underscore.js"></script>
+    <script src="../backbone.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
